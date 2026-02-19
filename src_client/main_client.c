@@ -32,7 +32,7 @@ int main(int argc, char **argv){
 		if (valid_char < 0) fprintf(stderr, "[ ERROR ] read_char_timeout failed\n");
 		if (valid_char == 0) {
 			if (timeout_hit) continue;
-			c = ' ';
+			c = '.';
 			timeout_hit = true;
 		} else {
 			c = (unsigned char)valid_char;
@@ -45,6 +45,8 @@ int main(int argc, char **argv){
 		}
 		switch(c){
 			case '\n':
+			case '.':
+				word_buff[i++] = '.';
 			case ' ':
 				word_buff[i++] = ' ';
 				word_buff[i] = '\0';

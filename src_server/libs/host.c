@@ -46,7 +46,7 @@ void start_listening(int sockfd){
 		char command_buffer[buffer_size];
 		while ((bytes_read = read(clientfd, buffer, buffer_size - 1)) > 0){
 			buffer[bytes_read] = '\0';
-			snprintf(command_buffer, sizeof(command_buffer), "xdotool type \"%s \"", buffer);
+			snprintf(command_buffer, sizeof(command_buffer), "xdotool type \"%s\"", buffer);
 			system(command_buffer);
 		}
 	}
