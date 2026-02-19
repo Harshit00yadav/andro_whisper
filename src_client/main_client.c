@@ -46,6 +46,7 @@ int main(int argc, char **argv){
 		switch(c){
 			case '\n':
 			case ' ':
+				word_buff[i++] = ' ';
 				word_buff[i] = '\0';
 				send_chars(connfd, word_buff);
 				memset(word_buff, 0, sizeof(word_buff));
