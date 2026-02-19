@@ -28,7 +28,7 @@ int main(int argc, char **argv){
 	bool EXIT = false;
 	bool timeout_hit = false;
 	while (!EXIT){
-		int valid_char = read_char_timeout(3);
+		int valid_char = read_char_timeout(1);
 		if (valid_char < 0) fprintf(stderr, "[ ERROR ] read_char_timeout failed\n");
 		if (valid_char == 0) {
 			if (timeout_hit) continue;
