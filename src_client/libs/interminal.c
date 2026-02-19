@@ -6,7 +6,7 @@ void set_raw_mode(struct termios *orig){
 	struct termios raw;
 	tcgetattr(STDIN_FILENO, orig);
 	raw = *orig;
-	raw.c_lflag &= ~(ICANON);  // | ECHO);
+	raw.c_lflag &= ~(ICANON | ECHO);
 	tcsetattr(STDIN_FILENO, TCSANOW, &raw);
 }
 
